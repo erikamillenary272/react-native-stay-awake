@@ -1,6 +1,6 @@
 {
   "name": "react-native-stay-awake",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Keep the screen awake / prevent the screen from sleeping in React Native. New Architecture TurboModule with useKeepAwake hook, tag-based reference counting, and web Wake Lock support. Replacement for the deprecated react-native-keep-awake.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
