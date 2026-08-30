@@ -1,7 +1,7 @@
 {
   "name": "react-native-stay-awake",
   "version": "0.1.0",
-  "description": "Keep the screen awake in React Native. New Architecture (TurboModule) first, with hooks, reference counting, and web support.",
+  "description": "Keep the screen awake / prevent the screen from sleeping in React Native. New Architecture TurboModule with useKeepAwake hook, tag-based reference counting, and web Wake Lock support. Replacement for the deprecated react-native-keep-awake.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {
@@ -57,7 +57,17 @@
     "turbo-module",
     "new-architecture",
     "expo-keep-awake",
-    "react-native-keep-awake"
+    "react-native-keep-awake",
+    "keep-screen-on",
+    "prevent-sleep",
+    "screen-timeout",
+    "insomnia",
+    "nosleep",
+    "react-native-web",
+    "hooks",
+    "typescript",
+    "tvos",
+    "visionos"
   ],
   "repository": {
     "type": "git",

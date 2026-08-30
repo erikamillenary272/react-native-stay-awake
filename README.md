@@ -1,8 +1,14 @@
 # react-native-stay-awake
 
-Keep the screen awake in React Native. Built for the **New Architecture** (TurboModule) with a hooks-first API, **reference counting**, and **web support** via the Screen Wake Lock API.
+[![npm version](https://img.shields.io/npm/v/react-native-stay-awake.svg)](https://www.npmjs.com/package/react-native-stay-awake)
+[![npm downloads](https://img.shields.io/npm/dm/react-native-stay-awake.svg)](https://www.npmjs.com/package/react-native-stay-awake)
+[![CI](https://github.com/intellij-Shivam/react-native-stay-awake/actions/workflows/ci.yml/badge.svg)](https://github.com/intellij-Shivam/react-native-stay-awake/actions/workflows/ci.yml)
+[![types](https://img.shields.io/npm/types/react-native-stay-awake.svg)](https://www.npmjs.com/package/react-native-stay-awake)
+[![license](https://img.shields.io/npm/l/react-native-stay-awake.svg)](LICENSE)
 
-A modern replacement for the deprecated [`react-native-keep-awake`](https://github.com/corbt/react-native-keep-awake).
+**Keep the screen awake / keep the screen on in React Native** — prevent the screen from sleeping, dimming, or timing out while your app shows video, navigation, downloads, recipes, or a workout. Built for the **New Architecture** (TurboModule) with a hooks-first API, **tag-based reference counting**, and **web support** via the Screen Wake Lock API. Works on **iOS, Android, Web, tvOS, and visionOS** — with no Expo dependency.
+
+A modern replacement for the deprecated [`react-native-keep-awake`](https://github.com/corbt/react-native-keep-awake), and an [`expo-keep-awake`](https://docs.expo.dev/versions/latest/sdk/keep-awake/) alternative for bare React Native apps that don't want `expo-modules-core`.
 
 ## Why this library?
 
@@ -127,6 +133,26 @@ In unsupported browsers every call is a safe no-op (`isKeepAwakeAvailable()` ret
 | `getActiveKeepAwakeTags()` | List of active tags. |
 | `isKeepAwakeAvailable()` | Whether the platform can keep the screen awake. |
 | `addKeepAwakeReleasedListener(cb)` | Web only: platform released the lock. Returns `{ remove() }`. |
+
+## Migrating
+
+**From `react-native-keep-awake` (deprecated):** the default export is a drop-in — `<KeepAwake />`, `KeepAwake.activate()`, and `KeepAwake.deactivate()` all work unchanged. Just swap the import:
+
+```diff
+- import KeepAwake from 'react-native-keep-awake';
++ import KeepAwake from 'react-native-stay-awake';
+```
+
+**From `expo-keep-awake`:** same tag model, but the API is synchronous — no promises to await, and deactivating an unknown tag is a safe no-op instead of a thrown error:
+
+```diff
+- import { useKeepAwake, activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
++ import { useKeepAwake, activateKeepAwake, deactivateKeepAwake } from 'react-native-stay-awake';
+
+  useKeepAwake();                 // unchanged
+- await activateKeepAwakeAsync('tag');
++ activateKeepAwake('tag');
+```
 
 ## Testing with Jest
 
