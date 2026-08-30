@@ -61,13 +61,8 @@ buck-out/
 android/app/libs
 android/keystores/debug.keystore
 
-# Yarn
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# Yarn (managed via Corepack — see "packageManager" in package.json)
+.yarn/
 
 # Expo
 .expo/

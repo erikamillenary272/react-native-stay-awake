@@ -10,11 +10,13 @@
       "types": "./lib/typescript/src/index.d.ts",
       "default": "./lib/module/index.js"
     },
+    "./jest": "./jest/mock.js",
     "./package.json": "./package.json"
   },
   "files": [
     "src",
     "lib",
+    "jest",
     "android",
     "ios",
     "cpp",
@@ -36,23 +38,37 @@
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
     "prepare": "bob build",
     "typecheck": "tsc",
+    "test": "jest",
     "lint": "eslint \"**/*.{js,ts,tsx}\""
   },
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "web",
+    "keep-awake",
+    "keep awake",
+    "wake-lock",
+    "wakelock",
+    "screen",
+    "idle-timer",
+    "FLAG_KEEP_SCREEN_ON",
+    "idleTimerDisabled",
+    "turbo-module",
+    "new-architecture",
+    "expo-keep-awake",
+    "react-native-keep-awake"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shivamsaini/react-native-stay-awake.git"
+    "url": "git+https://github.com/intellij-Shivam/react-native-stay-awake.git"
   },
-  "author": "Shivam Saini <shivam27saini@icloud.com> (https://github.com/shivamsaini)",
+  "author": "Shivam Saini <shivam27saini@icloud.com> (https://github.com/intellij-Shivam)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shivamsaini/react-native-stay-awake/issues"
+    "url": "https://github.com/intellij-Shivam/react-native-stay-awake/issues"
   },
-  "homepage": "https://github.com/shivamsaini/react-native-stay-awake#readme",
+  "homepage": "https://github.com/intellij-Shivam/react-native-stay-awake#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -62,12 +78,15 @@
     "@eslint/js": "^10.0.1",
     "@react-native/babel-preset": "0.85.0",
     "@react-native/eslint-config": "0.85.0",
+    "@types/jest": "^30.0.0",
     "@types/react": "^19.2.0",
+    "babel-jest": "^30.5.0",
     "del-cli": "^7.0.0",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-ft-flow": "^3.0.11",
     "eslint-plugin-prettier": "^5.5.6",
+    "jest": "^30.5.0",
     "prettier": "^3.8.3",
     "react": "19.2.3",
     "react-native": "0.85.0",
@@ -108,6 +127,26 @@
     "android": {
       "javaPackageName": "com.stayawake"
     }
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/src/__tests__/**/*.test.ts"
+    ],
+    "transform": {
+      "^.+\\.(js|ts|tsx)$": [
+        "babel-jest",
+        {
+          "presets": [
+            "module:@react-native/babel-preset"
+          ]
+        }
+      ]
+    },
+    "modulePathIgnorePatterns": [
+      "<rootDir>/lib/",
+      "<rootDir>/example/"
+    ]
   },
   "prettier": {
     "quoteProps": "consistent",
