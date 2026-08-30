@@ -28,6 +28,17 @@ node example/node_modules/react-native/scripts/generate-codegen-artifacts.js -p 
 
 To compile the Android library alone: `cd example/android && ./gradlew :react-native-stay-awake:compileDebugKotlin`.
 
+### Releasing
+
+Published to npm as `react-native-stay-awake` (unscoped, public; first release 1.0.0). The flow:
+
+1. `npm version <x.y.z> --no-git-tag-version`, commit (`chore: release x.y.z`), push.
+2. Wait for CI to go green (`gh run watch`) — pushes cancel in-progress runs, so always check the run for the latest commit.
+3. `npm publish` — the account has 2FA, so the user must supply `--otp=<code>`; the `prepare` script rebuilds `lib/` automatically. Verify with `npm view react-native-stay-awake version`.
+4. `git tag v<x.y.z> && git push origin v<x.y.z>`, then `gh release create v<x.y.z>` with notes.
+
+CI runs Yarn 4 via a `corepack enable` step in `.github/actions/setup/action.yml` — required because `.yarn/` is not committed.
+
 ### iOS pod install gotcha
 
 This checkout lives under a path containing a space (`Open Source/`), which breaks RN 0.85's prebuilt-tarball resolution (`URI::File.build` in `scripts/cocoapods/rncore.rb` and `rndependencies.rb` inside `example/node_modules/react-native`). After any reinstall of node_modules, `pod install` fails until those four `URI::File.build(path: destinationDebug)` call sites are wrapped with `URI::DEFAULT_PARSER.escape(...)`. CI is unaffected (no spaces in runner paths).
